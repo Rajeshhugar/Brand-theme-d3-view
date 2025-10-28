@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+# 🌌 Brand Theme 3D Force Graph
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive **React + Three.js + 3d-force-graph** visualization that shows relationships between **brands, products, themes, subthemes, and sentiments** in a 3D space.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- ⚡ Built using **React + Create React App**
+- 🧠 Interactive 3D force-directed layout using **Three.js** and **3d-force-graph**
+- 🎯 Hierarchical view: **Brand → Product → Theme → Subtheme → Sentiment**
+- 🌈 Color-coded sentiment visualization (Positive / Negative / Neutral)
+- 🖱️ Click on nodes to view detailed info
+- 💅 Tailwind CSS-based clean dark theme (optional)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧩 1️⃣ Project Setup
 
-### `npm test`
+Create a new React project:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npx create-react-app brand-theme-graph
+Go into the project folder:
 
-### `npm run build`
+bash
+Copy code
+cd brand-theme-graph
+⚙️ 2️⃣ Install Dependencies
+Install the required libraries:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+npm install three 3d-force-graph
+📁 3️⃣ Add the Component
+Create a new file:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+css
+Copy code
+src/BrandThemeGraph3D.jsx
+Paste your full component code inside this file (the one you shared earlier).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🧠 4️⃣ Use the Component
+Open src/App.js and replace everything with:
 
-### `npm run eject`
+jsx
+Copy code
+import React from 'react';
+import BrandThemeGraph3D from './BrandThemeGraph3D';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+function App() {
+  return (
+    <div className="App">
+      <BrandThemeGraph3D />
+    </div>
+  );
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export default App;
+🎨 5️⃣ (Optional) Tailwind CSS Setup
+If you want the same dark theme styling used in the component, install Tailwind CSS:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copy code
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+Edit the tailwind.config.js file:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+js
+Copy code
+content: ["./src/**/*.{js,jsx,ts,tsx}"],
+theme: { extend: {} },
+plugins: [],
+Then open src/index.css and replace everything with:
 
-## Learn More
+css
+Copy code
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+▶️ 6️⃣ Run the App
+Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy code
+npm start
+Then open your browser and go to:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+arduino
+Copy code
+http://localhost:3000
+🧭 7️⃣ Explore the Graph
+✅ Rotate, zoom, and drag the 3D graph
+✅ Click nodes to view label and type
+✅ Observe color-coded sentiments:
 
-### Code Splitting
+🟢 Positive → #22c55e
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔴 Negative → #ef4444
 
-### Analyzing the Bundle Size
+⚪ Neutral → #64748b
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🧠 Architecture Overview
+Data → Node & Link Generation → 3D Graph Rendering → Interactivity
 
-### Making a Progressive Web App
+Level	Example	Node Color
+Brand	EltaMD	🟠 #f59e0b
+Product	UV Clear	🔵 #3b82f6
+Theme	Effectiveness	🟣 #8b5cf6
+Subtheme	Lightweight	💗 #ec4899
+Sentiment	Positive / Negative / Neutral	🟢🔴⚪
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📊 Future Enhancements
+Upload Excel or CSV files for real data
 
-### Advanced Configuration
+Add filters for sentiment or theme
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Display hover tooltips with stats
 
-### Deployment
+Export graph snapshots or videos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🧑‍💻 Author
+Rajesh Hugar
+Senior Data Analyst | Aspiring Full-Stack AI Engineer
+💡 Passionate about data, visualization, and AI
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
